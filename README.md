@@ -1,56 +1,9 @@
-[![Build Status](https://circleci.com/gh/openSUSE/open-build-service.svg?style=svg)](https://circleci.com/gh/openSUSE/open-build-service)
-[![Code Coverage](https://codecov.io/gh/openSUSE/open-build-service/branch/master/graph/badge.svg)](https://codecov.io/gh/openSUSE/open-build-service)
-[![Code Climate](https://codeclimate.com/github/openSUSE/open-build-service.png)](https://codeclimate.com/github/openSUSE/open-build-service)
-[![Depfu](https://badges.depfu.com/badges/3c5817c5855d9da3eabf1b71d64c46c1/overview.svg)](https://depfu.com/github/openSUSE/open-build-service?project=src%2Fapi%40Bundler)
 
-# Open Build Service
-The [Open Build Service (OBS)](https://www.openbuildservice.org) is a generic system to build and distribute binary packages from sources in an automatic, consistent, and reproducible way. You can release packages as well as updates, add-ons, appliances, and entire distributions for a wide range of operating systems and hardware architectures. More information can be found on [openbuildservice.org](https://www.openbuildservice.org).
+## Script for autoscaling CI build nodes with Open Build Service
 
-The OBS consists of a backend and a frontend. The backend implements all the core functionality (i.e. building packages). The frontend provides a web application and XML API for interacting with the backend. Additionally, there is a command line client (osc) for the API which is developed in a [separate repository](https://github.com/openSUSE/osc).
+This script was contributed to [Open Build Service](https://github.com/openSUSE/open-build-service) in 2011 as part of a [Master's Thesis](http://urn.fi/URN:NBN:fi:tty-2011112514909), and is preserved here merely for nostalgia reasons.
 
-## Licensing
-The Open Build Service is Free Software and is released under the terms of the GPL, except where noted. Additionally, 3rd-party content (like, but not exclusively, the webui icon theme) may be released under a different license. Please check the respective files for details.
+### Licensing
 
-## Community
-You can discuss with the OBS Team via IRC on the channel [#opensuse-buildservice](irc://irc.libera.chat/opensuse-buildservice) or you can use our mailing list [opensuse-buildservice@opensuse.org](mailto:opensuse-buildservice+subscribe@opensuse.org). Please refer to the openSUSE Mailing Lists [page](https://en.opensuse.org/openSUSE:Mailing_lists_subscription#Subscribing) to learn about our mailing list subscription and additional information.
+The Open Build Service is Free Software and is released under the terms of the GPL, except where noted. Additionally, 3rd-party content may be released under a different license. Please check the respective files for details.
 
-### Development / Contribution
-If you want to contribute to the OBS, please checkout our [contribution readme](CONTRIBUTING.md):-)
-
-## Source Code Repository Layout
-The OBS source code repository is hosted on [Github](https://github.com/opensuse/open-build-service) and organized like this:
-
-        dist          Files relevant for our distribution packages
-        docs          Documentation, examples and schema files
-        src/api       Rails app (Ruby on Rails)
-        src/backend   Backend code (Perl)
-
-## Installation
-To run the OBS in production, we recommend using our [appliance](https://openbuildservice.org/download/) which is the whole package: A recent and stable Linux Operating System ([openSUSE](https://www.opensuse.org)) bundled and pre-configured with all the server and OBS components you need to get going.
-
-If that is not for you because you have some special needs for your setup (e.g. different partition schema, SLES as base system, etc.), you can also install our packages and run a setup wizard.
-
-After finishing the installation of your base system, follow these steps:
-
-1. Add the OBS software repository with zypper. Please be aware, that the needed URL differs, depending on your Base Operating System. We use openSUSE Leap 15.1 in this example.
-
-    ```shell
-    zypper ar -f https://download.opensuse.org/repositories/OBS:/Server:/2.10/openSUSE_15.1/OBS:Server:2.10.repo
-    ```
-
-2. Install the package
-
-   ```shell
-   zypper in -t pattern OBS_Server
-   ```
-
-3. Run our setup wizard
-
-   ```shell
-   /usr/lib/obs/server/setup-appliance.sh --force
-   ```
-
-## Advanced Setup
-
-If you have a more complex setup (e.g. a distributed backend), we recommend to read the Administration
-chapter in our [user manual](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.admin.html).
