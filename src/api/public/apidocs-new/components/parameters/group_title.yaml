@@ -1,7 +1,0 @@
-in: path
-name: group_title
-schema:
-  type: string
-required: true
-description: Group title
-example: group-test

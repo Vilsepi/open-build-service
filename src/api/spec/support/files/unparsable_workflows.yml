@@ -1,5 +1,0 @@
-workflow123:
-  steps:
- branch_package:
-        source_project: "test-project"
-        source_package: "test-package"

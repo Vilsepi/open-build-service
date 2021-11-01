@@ -1,5 +1,0 @@
-.notifications-counter
-  %i.fas.fa-bell
-  - unless User.session.unread_notifications.zero?
-    %span.badge.badge-primary.align-text-top= User.session.unread_notifications
-  %span.d-block Notifications
